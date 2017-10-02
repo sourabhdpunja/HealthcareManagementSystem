@@ -1,0 +1,131 @@
+
+
+<!--<nav class="navbar taj-navbar-default navbar-fixed-top">-->
+    <!--<div class="container-fluid">-->
+
+        <!--<div class="navbar-text pull-left ">-->
+            <!--<a class="navbar-link" >-->
+                <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-header col-xs-11 col-sm-5">-->
+            <!--<a class="navbar-brand">-->
+                <!--Doctor Details-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-text pull-right">-->
+            <!--<a class="navbar-link"-->
+               <!--ng-click="model.updateUser(model.user)">-->
+                <!--<span class="glyphicon glyphicon-ok"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+<div ng-include="'views/common/header-common.view.client.html'"></div>
+
+<div class="container-fluid">
+    <img class="fit-left-right-top" src="uploads/service1.jpg"/>
+
+    <div class="taj-bottom-margin taj-top-margin">
+        <div class="input-group"
+             id="searchHere">
+            <input type="text"
+                   class="form-control"
+                   ng-model="doctorName"
+                   placeholder="Search doctor here">
+            <span class="input-group-btn">
+                    <button class="btn btn-default"
+                            ng-click="model.searchDoctorByName(doctorName)"
+                            type="button">Go!
+                    </button>
+                </span>
+        </div><!-- /input-group -->
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <div class="container-fluid row">
+                <h3 class="panel-title">List Of Doctors</h3>
+            </div>
+        </div>
+        <div class="panel-body ">
+
+            <ul class="list-group">
+                <div class="display"
+                     ng-repeat="doctor in model.doctorList">
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="media-left">
+                                <a href="#">
+                                    <img class="media-object review-image img-rounded img-responsive taj-top-margin-25"
+                                         alt="Responsive image"
+                                         ng-src="{{doctor.profile.image_url}}"/>
+                                </a>
+                            </div>
+                            <div class="media-body">
+
+                                <h4 class="media-heading">{{doctor.profile.first_name}},{{ }} {{doctor.profile.last_name}}</h4>
+                                <ul class="list-group">
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-3 col-lg-2"><b>Location  :</b></div>
+                                            <div class="col-md-9 col-lg-10">
+                                                {{doctor.practices[0].visit_address.city}},{{ }} {{doctor.practices[0].visit_address.zip}}
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-3 col-lg-2"><b>Title :</b></div>
+                                            <div class="col-md-9 col-lg-10">{{doctor.profile.title}}</div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-md-3 col-lg-2"><b>Specialization :</b></div>
+                                            <div class="col-md-9 col-lg-10">{{doctor.specialties[0].name}}</div>
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item">
+                                        <div class="row">
+                                            <div class="col-lg-2 col-md-3 col-xs-5">
+                                                <a ng-click="model.showDoctorDetails(doctor)">
+                                                    <b><span class="glyphicon glyphicon-zoom-in"></span></b>{{ }} View
+                                                </a>
+                                            </div>
+                                            <div class="col-lg-10 col-md-9 col-xs-7">
+                                                <a ng-click="model.createAppointment(doctor)">
+                                                    <b><span class="glyphicon glyphicon-time"></span></b>{{ }} Schedule
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="color-white"></li>
+                                </ul>
+
+                            </div>
+                        </div>
+                    </li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+<!--<nav class="navbar taj-navbar-default navbar-fixed-bottom">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-text pull-right">-->
+            <!--<a class="navbar-link"-->
+               <!--ng-click="model.update(model.user)">-->
+                <!--<span class="glyphicon glyphicon-user"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+<div ng-include="'views/common/footer-common.view.client.html'"></div>

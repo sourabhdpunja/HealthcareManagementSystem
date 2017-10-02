@@ -1,0 +1,579 @@
+
+
+<!--<nav class="navbar taj-navbar-default navbar-fixed-top">-->
+    <!--<div class="container-fluid">-->
+
+        <!--<div class="navbar-text pull-left ">-->
+            <!--<a class="navbar-link" >-->
+                <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-header col-xs-11 col-sm-5">-->
+            <!--<a class="navbar-brand">-->
+                <!--Patient Profile-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-text pull-right">-->
+            <!--<a class="navbar-link"-->
+               <!--ng-click="model.updateUser(model.user)">-->
+                <!--<span class="glyphicon glyphicon-ok"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+<div ng-include="'views/common/header-common.view.client.html'"></div>
+
+<div class="container-fluid profile-info">
+
+    <div ng-show="model.message" class="alert alert-info">
+        {{model.message}}
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4"></div>
+        <div class="col-xs-4">
+
+            <a href="#">
+                <img class="img-responsive img-rounded" alt="Responsive image" ng-src="{{model.user.profile.image_url}}"/>
+            </a>
+
+            <form action="/api/upload"  method="post" enctype="multipart/form-data">
+            <div class = "row taj-top-margin">
+                <div class="col-xs-9">
+                     <input name="myFile" type="file"  id = "file" class="form-control" required="required"/>
+                    <input  name="userId" value="{{model.userId}}" style="display: none"/>
+                </div>
+                <div class="col-xs-3">
+                    <button type="submit" class="btn btn-block btn-primary">Upload</button>
+                </div>
+            </div>
+            </form>
+        </div>
+        <div class="col-xs-4"></div>
+    </div>
+
+    <div class="container-fluid">
+        <h2 >
+            {{model.firstname}}, {{model.lastname}}
+        </h2>
+
+
+        <div class="row">
+            <div class="container-fluid col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 class="panel-title">Bio</h3>
+                            </div>
+                            <div class="col-xs-4">
+                                <a class="pull-right"
+                                   ng-click="model.updateUser(model.user)">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <label for="height">Height</label>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="height"
+                                       ng-model="model.user.physic.height"
+                                       class="form-control"
+                                       id="height"
+                                       placeholder="Height"/>
+                            </div>
+
+                        </div>
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <label for="weight">Weight</label>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="weight"
+                                       ng-model="model.user.physic.weight"
+                                       class="form-control"
+                                       id="weight"
+                                       placeholder="Weight"/>
+                            </div>
+                        </div>
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <label for="age">Age</label>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="age"
+                                       ng-model="model.user.physic.age"
+                                       class="form-control"
+                                       id="age"
+                                       placeholder="Age"/>
+                            </div>
+                        </div>
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <label for="gender">Blood Group</label>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="blood"
+                                       ng-model="model.user.physic.blood"
+                                       class="form-control"
+                                       id="blood"
+                                       placeholder="Blood"/>
+                            </div>
+                        </div>
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <label for="gender">Gender</label>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="gender"
+                                       ng-model="model.user.profile.gender"
+                                       class="form-control"
+                                       id="gender"
+                                       placeholder="Gender"/>
+                            </div>
+                        </div>
+
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <label for="dob">Date Of Birth</label>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="dob"
+                                       ng-model="model.user.physic.birthday"
+                                       class="form-control"
+                                       id="dob"
+                                       type="date"
+                                       placeholder="mm/dd/yyyy"/>
+                            </div>
+                        </div>
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <label for="npi">NPI</label>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="npi"
+                                       ng-model="model.user.npi"
+                                       class="form-control"
+                                       id="npi"
+                                       placeholder="NPI"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 class="panel-title">Profile</h3>
+                            </div>
+                            <div class="col-xs-4">
+                                <a class="pull-right"
+                                   ng-click="model.updateUser(model.user)">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body ">
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <input name="firstName"
+                                       ng-model="model.user.profile.first_name"
+                                       class="form-control"
+                                       id="firstName"
+                                       placeholder="First Name"/>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="lastName"
+                                       ng-model="model.user.profile.last_name"
+                                       class="form-control"
+                                       id="lastName"
+                                       placeholder="Last Name"/>
+                            </div>
+                        </div>
+                        <div class = "row taj-bottom-margin">
+                            <!--<div class = "col-xs-6">
+                                <input name="title"
+                                       ng-model="model.user.profile.title"
+                                       class="form-control"
+                                       id="title"
+                                       placeholder="Title"/>
+                            </div>-->
+                            <div class = "col-xs-6">
+                                <select class="form-control"
+                                        id="usertype"
+                                        ng-model="model.user.userType">
+                                    <option value="" disabled selected>Select User Type</option>
+                                    <option value="patient">Patient</option>
+                                    <option value="doctor">Doctor</option>
+                                    <option value="agent">Agent</option>
+                                </select>
+                            </div>
+
+                            <div class = "col-xs-6">
+                                <div class="row">
+                                    <div class = "col-xs-4">
+                                        <label for="smoker">Smoker</label>
+                                    </div>
+                                    <div class = "col-xs-8">
+                                        <select class="form-control"
+                                                id="smoker"
+                                                ng-model="model.user.smokeStatus">
+                                            <option value="true">Yes</option>
+                                            <option value="false">No</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container-fluid col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3 class="panel-title">Address</h3>
+                            </div>
+                            <div class="col-xs-4">
+                                <a class="pull-right"
+                                   ng-click="model.updateUser(model.user)">
+                                    <span class="glyphicon glyphicon-ok"></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body ">
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <input name="street"
+                                       ng-model="model.user.practices[0].visit_address.street"
+                                       class="form-control"
+                                       id="street"
+                                       placeholder="Street 1"/>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="city"
+                                       ng-model="model.user.practices[0].visit_address.city"
+                                       class="form-control"
+                                       id="city"
+                                       placeholder="City"/>
+                            </div>
+                        </div>
+                        <div class = "row taj-bottom-margin">
+                            <div class = "col-xs-6">
+                                <input name="state"
+                                       ng-model="model.user.practices[0].visit_address.state"
+                                       class="form-control"
+                                       id="state"
+                                       placeholder="State"/>
+                            </div>
+                            <div class = "col-xs-6">
+                                <input name="zip"
+                                       ng-model="model.user.practices[0].visit_address.zip"
+                                       class="form-control"
+                                       id="zip"
+                                       placeholder="Zip"/>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class = "col-xs-1"><span class="glyphicon glyphicon-phone"></span></div>
+                            <div class = "col-xs-5">
+                                <input name="phone"
+                                       ng-model="model.user.practices[0].phones[0].number"
+                                       class="form-control"
+                                       id="phone"
+                                       placeholder="Mobile"/>
+                            </div>
+                            <div class = "col-xs-1"><span class="glyphicon glyphicon-envelope"></span></div>
+                            <div class = "col-xs-5">
+                                <input name="email"
+                                       ng-model="model.user.email"
+                                       class="form-control"
+                                       id="email"
+                                       placeholder="Email"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>                              <!--Biology-->
+
+
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h3 class="panel-title">Medical History</h3>
+                    </div>
+                    <div class="col-xs-4">
+                        <a class="pull-right"
+                           ng-click="model.updateUser(model.user)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label for="diseases" id ="diseaseLabel">Diseases</label>
+                    </div>
+                    <div class="panel-body">
+                        <textarea name="diseases"
+                                  class="form-control"
+                                  ng-model="model.user.diseases"
+                                  id="diseases"
+                                  placeholder="Diseases"
+                                  rows="5"></textarea>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label for="operation" id ="operationLabel">Operations</label>
+                    </div>
+                    <div class="panel-body">
+                        <textarea name="operation"
+                                  class="form-control"
+                                  ng-model="model.user.operations"
+                                  id="operation"
+                                  placeholder="Operation Performed"
+                                  rows="5"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>              <!--Medical History-->
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                        <label for="achievement" id ="achievementLabel">Biography</label>
+
+                        <a class="pull-right"
+                           ng-click="model.updateUser(model.user)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </a>
+            </div>
+            <div class="panel-body">
+               <textarea name="achievement"
+                         class="form-control"
+                         ng-model="model.user.profile.bio"
+                         id="achievement"
+                         placeholder="Achievements"
+                         rows="5"></textarea>
+            </div>
+        </div>              <!--Bio Graphy-->
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-8">
+                        <h3 class="panel-title">Education</h3>
+                    </div>
+                    <div class="col-xs-4">
+                        <a class="pull-right"
+                           ng-click="model.updateUser(model.user)">
+                            <span class="glyphicon glyphicon-ok"></span>
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label class ="normalLabel">Degree</label>
+                    </div>
+                    <div class="panel-body"
+                         ng-repeat="education in model.user.educations">
+                        {{education.degree}}
+                        ,{{ }} {{education.school}}
+                        ,{{ }} {{education.graduation_year}}
+                        <a class="pull-right"
+                           ng-click="model.removeAllDegree(education)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </div>
+                    <div class="panel-body"></div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-12">
+                                <input class="form-control"
+                                       id="degree"
+                                       name="degree"
+                                       ng-model="model.user.educationsNew.degree"
+                                       placeholder="Degree"/>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <input class="form-control"
+                                       id="school"
+                                       name="school"
+                                       ng-model="model.user.educationsNew.school"
+                                       placeholder="University"/>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <input class="form-control"
+                                       id="year"
+                                       name="year"
+                                       ng-model="model.user.educationsNew.graduation_year"
+                                       placeholder="Year"/>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <a class="btn btn-block btn-default"
+                                   ng-click="model.addNewDegree(model.user.educationsNew)">
+                                    Add Degree
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>      <!--Degree-->
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label class ="normalLabel">Specialities</label>
+                    </div>
+                    <div class="panel-body"
+                         ng-repeat="specialty in model.user.specialties">
+                        {{specialty.name}}
+                        ,{{ }} {{specialty.category}}
+                        ,{{ }} {{specialty.description}}
+                        <a class="pull-right"
+                           ng-click="model.removeSpecialty(specialty)">
+                            <span class="glyphicon glyphicon-remove"></span>
+                        </a>
+                    </div>
+                    <div class="panel-body"></div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-md-3 col-xs-12">
+                                <input class="form-control"
+                                       id="name"
+                                       name="name"
+                                       ng-model="model.user.specialtyNew.name"
+                                       placeholder="Specialty"/>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <input class="form-control"
+                                       id="category"
+                                       name="category"
+                                       ng-model="model.user.specialtyNew.category"
+                                       placeholder="Category"/>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <input class="form-control"
+                                       id="description"
+                                       name="description"
+                                       ng-model="model.user.specialtyNew.description"
+                                       placeholder="Description"/>
+                            </div>
+                            <div class="col-md-3 col-xs-12">
+                                <a class="btn btn-block btn-default"
+                                   ng-click="model.addNewSpecialty(model.user.specialtyNew)">
+                                    Add Degree
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>      <!--Specialty-->
+
+                <!--<div class="panel panel-default">
+                    <div class="panel-heading">
+                        <label for="speciality" class ="normalLabel">Specialities</label>
+                    </div>
+                    <div class="panel-body">
+                        <textarea name="speciality"
+                                  class="form-control"
+                                  id="speciality"
+                                  placeholder="Specialities"
+                                  rows="5">{{model.user.specialties[0].description}}</textarea>
+                        &lt;!&ndash;ng-model="model.user.educations.bio"&ndash;&gt;
+                    </div>
+                </div>      &lt;!&ndash;Specialty&ndash;&gt;-->
+
+            </div>
+        </div>              <!--Education-->
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="container-fluid row">
+                    <h3 class="panel-title">Reviews</h3>
+                </div>
+            </div>
+            <div class="panel-body ">
+
+
+                <ul class="list-group">
+                    <div ng-repeat="rating in model.user.ratings">
+                    <li class="list-group-item">
+                        <div class="media">
+                            <div class="media-left media-middle">
+                                <a href="#">
+                                    <img class="media-object review-image img-rounded img-responsive"
+                                         alt="Responsive image"
+                                         ng-src="{{rating.image_url}}"/>
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <h5 class="media-heading">{{rating.provider}}</h5>
+                                <label class ="normalLabel">{{rating.rating}}</label>
+                                <label class ="normalLabel">{{rating.comments}}</label>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="color-white"></li>
+                    </div>
+                </ul>
+
+
+            </div>
+        </div>              <!--Reviews-->
+
+
+
+        <div class="taj-bottom-margin taj-top-margin">
+            <a class="btn btn-default btn-info btn-block"
+               href = "#!/insurance"
+               role="button">Insurance
+            </a>
+        </div>
+
+        <div class="taj-bottom-margin taj-top-margin">
+            <a class="btn btn-default btn-danger btn-block"
+               ng-click="model.deleteUser(model.user)"
+               role="button">Unregister
+            </a>
+        </div>
+
+    </div>
+</div>
+
+
+<!--<nav class="navbar taj-navbar-default navbar-fixed-bottom">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-text pull-right">-->
+            <!--<a class="navbar-link"-->
+               <!--ng-click="model.update(model.user)">-->
+                <!--<span class="glyphicon glyphicon-user"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+
+<div ng-include="'views/common/footer-common.view.client.html'"></div>

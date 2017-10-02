@@ -1,0 +1,288 @@
+input, textarea, select   {
+    margin-bottom: 5px;
+}
+
+.taj-bottom-margin  {
+    margin-bottom: 10px;
+}
+
+.div-width  {
+    width: 400px;
+    margin: auto;
+}
+
+.panel-padding-left   {
+    padding-left: 10px;
+}
+
+.left-margin-45 {
+    margin-left: 45px;
+}
+
+.review-image  {
+    height:50px;
+    width:auto;/*maintain aspect ratio*/
+    max-width:100px;
+}
+
+.color-white    {
+    color:white;
+}
+
+.back-color-white    {
+    background-color:white;
+}
+
+.taj-name-margin  {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.fit-left-right-top {
+    background-size:contain;
+    height: 70%;
+    height: auto;
+    width: 100%;
+}
+
+.top-left-padding {
+    padding-top: 290px;
+    padding-left: 42px;
+    color: cadetblue;
+}
+
+.for_patients {
+    background: url("../uploads/patient2.jpg") no-repeat scroll 0 0 transparent;
+    background-size: cover;
+    height: 512px;
+    background-position: center top;
+}
+
+.for_doctors {
+    background: url("../uploads/doctor.jpg") no-repeat scroll 0 0 transparent;
+    background-size: cover;
+    height: 512px;
+    background-position: center top;
+}
+
+.for_agents {
+    background: url("../uploads/medicare-agent.jpg") no-repeat scroll 0 0 transparent;
+    background-size: cover;
+    height: 512px;
+    background-position: center top;
+}
+
+.dl-horizontal dt, dd {
+    text-align: left;
+    padding-top: 7.5px;
+}
+
+.reschedule-btn {
+    line-height: 0.6;
+}
+
+.margin-top-20-bottom-32   {
+    margin-top: 20px;
+    margin-bottom: 32px;
+}
+
+.taj-top-margin {
+    margin-top: 10px;
+}
+
+.red    {
+    color: #b73349;
+}
+
+.taj-top-margin-25 {
+    margin-top: 25px;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 15px 15px;
+    font-size: 16px;
+    line-height: 20px;
+    color: floralwhite;
+}
+
+#setHeight{
+    height: 300px;
+}
+/*.header-navbar-back-image {
+    !*background-color:  #09bde8;*!
+    border-color: #18f306;
+    !*height: 100%;*!
+    background: url("../uploads/heart-pulse-light.jpeg") no-repeat 0 fixed;
+    !*background-size: contain;*!
+    margin: 0 auto;
+    !*background-position: center;*!
+}*/
+
+.header-navbar-back-image {
+    border-color: #18f306;
+    background-image: url("../uploads/heart-pulse-light1.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#menucollapse   {
+    color: whitesmoke;
+}
+
+#logo>a:hover, #logo>a  {
+    background-color: #46a1b4;
+    color: whitesmoke;
+}
+
+/*.navbar-default {
+    background-color: #57bbe8;
+    border-color: #18f306;
+}*/
+
+.taj-navbar-default .navbar-nav>li>a{
+    color: whitesmoke;
+}
+
+.taj-navbar-default .navbar-nav>li>a:hover{
+    background-color:#20606d;
+}
+
+.taj-navbar-default {
+    color: whitesmoke;
+    background-color: #46a1b4;
+}
+
+.taj-carousel-container, .taj-carousel-img{
+    width: 100%;
+    height: 605px !important;
+}
+
+.service-img {
+    opacity: 0.9;
+}
+
+.hservice {
+    /* background: rgb(242, 247, 255); */
+    background-color: rgba(244, 247, 253, 1);
+    margin: 30px 0px;
+    padding-bottom: 30px;
+    transition: all 0.3s ease-in;
+}
+
+.white  {
+    color: #ffffff;
+}
+
+.taj-col-xs-3 {
+    width: 25%;
+    position: absolute;
+    top: 60px;
+    bottom: 60px;
+    z-index: 1;
+    overflow-y: scroll;
+}
+
+@media (min-width: 1200px) {
+    .taj-col-lg-9 {
+        width: 75%;
+        position: absolute;
+        right: 0;
+        top: 60px;
+        bottom: 60px;
+        overflow-y: scroll;
+    }
+}
+
+.wd-widget > img    {
+    width: 100%;
+}
+
+.wd-widget > iframe {
+    width: 100%;
+    height: 100%;
+}
+
+.wd-widget-toolbar  {
+    position: absolute;
+    right: 15px;
+    background-color: #ffffff;
+    opacity: 0.7;
+    padding: 5px;
+    border-bottom-left-radius: 10px;
+    z-index: 1;
+}
+.wd-youtube-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+
+.wd-youtube-container iframe    {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.taj-remove-left-pad    {
+    padding-left: 0px;
+}
+
+.youtube-widget {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+}
+
+.youtube-widget iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.glyphicon-circle-ok{
+    margin-left: 10px;
+}
+
+.sou-margin-top{
+    margin-top: 10px;
+}
+
+.sou-margin-top-20{
+    margin-top: 20px;
+}
+
+#diseaseLabel,#operationLabel,#achievementLabel
+{ font-weight: normal; }
+.normalLabel{
+    font-weight: normal;
+}
+
+#upload{
+    display:none
+}
+
+#imageToolbar{
+    background-color: black;
+}
+
+#padding-remove{
+padding: 1px;
+}
+
+.padding-add{
+    padding: 5px;
+}

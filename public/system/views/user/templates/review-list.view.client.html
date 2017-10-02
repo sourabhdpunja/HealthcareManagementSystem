@@ -1,0 +1,138 @@
+
+
+<!--<nav class="navbar taj-navbar-default navbar-fixed-top">-->
+    <!--<div class="container-fluid">-->
+
+        <!--<div class="navbar-text pull-left ">-->
+            <!--<a class="navbar-link" >-->
+                <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-header col-xs-11 col-sm-5">-->
+            <!--<a class="navbar-brand">-->
+                <!--Reviews-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-text pull-right">-->
+            <!--<a class="navbar-link"-->
+               <!--ng-click="model.updateUser(model.user)">-->
+                <!--<span class="glyphicon glyphicon-ok"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+<div ng-include="'views/common/header-common.view.client.html'"></div>
+
+<div class="container-fluid">
+    <!--<img class="fit-left-right-top" src="uploads/doctor-list-1.jpg"/>-->
+
+    <div class="taj-bottom-margin taj-top-margin">
+        <div class="input-group">
+            <input type="text"
+                   class="form-control"
+                   placeholder="Search name here">
+            <span class="input-group-btn">
+                <button class="btn btn-default"
+                        ng-click="model.searchDoctor()"
+                        type="button">Search
+                </button>
+            </span>
+        </div><!-- /input-group -->
+    </div>
+
+    <div class="panel panel-default taj-bottom-margin taj-top-margin">
+        <div class="panel-heading">
+            <div class="container-fluid row">
+                <h3 class="panel-title">Person Name</h3>
+            </div>
+        </div>
+        <div class="panel-body ">
+
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object review-image img-rounded img-responsive taj-top-margin-25"
+                                     alt="Responsive image"
+                                     src="uploads/heart-pulse.jpeg"/>
+                            </a>
+                        </div>
+                        <div class="media-body">
+
+                            <h4 class="media-heading">William Smithson</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-2"><b>Rating  :</b></div>
+                                        <div class="col-md-9 col-lg-10">3.5/5</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-2"><b>Comments :</b></div>
+                                        <div class="col-md-9 col-lg-10">xyz</div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+                <li class="color-white"></li>
+                <li class="list-group-item">
+                    <div class="media">
+                        <div class="media-left">
+                            <a href="#">
+                                <img class="media-object review-image img-rounded img-responsive taj-top-margin-25"
+                                     alt="Responsive image"
+                                     src="uploads/heart-pulse.jpeg"/>
+                            </a>
+                        </div>
+                        <div class="media-body">
+
+                            <h4 class="media-heading">William Smithson</h4>
+                            <ul class="list-group">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-2"><b>Rating  :</b></div>
+                                        <div class="col-md-9 col-lg-10">2/5</div>
+                                    </div>
+                                </li>
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-md-3 col-lg-2"><b>Comments :</b></div>
+                                        <div class="col-md-9 col-lg-10">ABC</div>
+                                    </div>
+                                </li>
+                            </ul>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+        <a class="btn btn-default btn-info btn-block"
+           role="button"
+           ng-click="model.updateUser(model.user)">
+            Add a Review
+        </a>
+
+</div>
+
+
+<!--<nav class="navbar taj-navbar-default navbar-fixed-bottom">-->
+    <!--<div class="container-fluid">-->
+        <!--<div class="navbar-text pull-right">-->
+            <!--<a class="navbar-link"-->
+               <!--ng-click="model.update(model.user)">-->
+                <!--<span class="glyphicon glyphicon-user"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+<div ng-include="'views/common/footer-common.view.client.html'"></div>

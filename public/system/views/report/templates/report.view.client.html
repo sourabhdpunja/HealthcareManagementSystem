@@ -1,0 +1,200 @@
+
+
+<!--<nav class="navbar taj-navbar-default navbar-fixed-top">-->
+    <!--<div class="container-fluid">-->
+
+        <!--<div class="navbar-text pull-left ">-->
+            <!--<a class="navbar-link" >-->
+                <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-header col-xs-11 col-sm-5">-->
+            <!--<a class="navbar-brand">-->
+                <!--Reports-->
+            <!--</a>-->
+        <!--</div>-->
+
+        <!--<div class="navbar-text pull-right">-->
+            <!--<a class="navbar-link"-->
+               <!--ng-click="model.updateUser(model.user)">-->
+                <!--<span class="glyphicon glyphicon-ok"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</nav>-->
+<div ng-include="'views/common/header-common.view.client.html'"></div>
+
+<div class="container-fluid sou-margin-top">
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="doctorName">Doctor</label>
+                <input class="form-control"
+                       id="doctorName"
+                       name="doctorName"
+                       ng-model="model.report.doctorName"
+                       readonly/>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="patientName">Patient</label>
+                <input class="form-control"
+                       id="patientName"
+                       name="patientName"
+                       ng-model="model.report.patientName"
+                       readonly/>
+            </div>
+            </div>
+        </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="appointmentdate">Date</label>
+                <input class="form-control"
+                       id="appointmentdate"
+                       name="appointmentdate"
+                       type="date"
+                       ng-model="model.report.date"
+                       readonly/>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="appointmenttime">Time</label>
+                <input class="form-control"
+                       id="appointmenttime"
+                       name="appointmenttime"
+                       ng-model="model.report.time"
+                       readonly/>
+            </div>
+        </div>
+    </div>
+
+
+
+
+        <div class="form-group">
+         <label>Prescription</label>
+         <textarea class="form-control"
+                   ng-model="model.report.prescription"
+                   rows="3"></textarea>
+        </div>
+
+    <div class="panel panel-default sou-margin-top-20">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-8">
+                    <h3 class="panel-title">Dosage</h3>
+                </div>
+                <div class="col-xs-4">
+                    <a class="pull-right"
+                       ng-click="model.updateUser(model.user)">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <input class="form-control"
+                   id="appointmentdosage"
+                   name="appointmentdosage"
+                   ng-model="model.report.dosage"
+                   />
+        </div>
+    </div>
+
+    <label>Doctor Comments</label>
+    <textarea class="form-control"
+              ng-model="model.report.doctorcomments"
+              rows="3"></textarea>
+
+    <div class="panel panel-default sou-margin-top-20">
+        <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-8">
+                    <h3 class="panel-title">Future Appointment</h3>
+                </div>
+                <div class="col-xs-4">
+                    <a class="pull-right"
+                       ng-click="model.updateUser(model.user)">
+                        <span class="glyphicon glyphicon-ok"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="panel-body">
+            <input class="form-control"
+                   id="appointmentfollowup"
+                   name="appointmentfollowup"
+                   ng-model="model.report.futureappointments"
+                   />
+        </div>
+    </div>
+
+    <div class="form-group" ng-show="!model.isEditable">
+        <label for="imageurl">ImageURL</label>
+        <a href="{{model.report.imageurl}}">
+            <input class="form-control"
+                   ng-model="model.report.imageurl"
+                   id="imageurl"
+                   name="imageurl"/>
+        </a>
+    </div>
+
+    <div class="forDoctors"
+         ng-show="model.isEditable">
+        <label for="file">File Upload</label>
+
+        <form action="/api/upload/report"
+              method="post"
+              enctype="multipart/form-data">
+            <div class="row">
+                <div class="col-xs-5">
+
+                    <!--<input id="file" class="form-control" multiple type="file"/>-->
+
+                    <input  name="myFile"    id = "file" type="file" class="form-control" required="required"/>
+                    <!--<input  name="width"     value="{{model.widget.width}}" style="display: none"/>-->
+                    <input  name="userId"    value="{{model.userId}}"       style="display: none"/>
+                    <input  name="appointmentId" value="{{model.appointmentId}}"    style="display: none"/>
+                    <input  name="reportId"    value="{{model.reportId}}"       style="display: none"/>
+                    <!--<input  name="widgetId"  value="{{model.widget._id}}"   style="display: none"/>-->
+                    <!--<input  name="widgetType"  value="{{model.widget.widgetType}}"   style="display: none"/>-->
+                    <!--<button type="submit"    class="btn btn-block btn-primary">Upload Image</button>-->
+
+                </div>
+                <div class="col-xs-4">
+                    <!--<a type="submit" class="btn btn-block btn-primary">Upload Image</a>-->
+                    <button type="submit" class="btn btn-block btn-primary">Upload Image</button>
+                </div>
+                <div class="col-xs-3 padding-add"><a href="{{model.report.imageurl}}">{{model.report.imagename}}</a></div>
+            </div>
+        </form>
+            <div class="row">
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4">
+                <!--<img class="img-responsive img-rounded" alt="Responsive image" ng-src="{{model.report.imageurl}}"/>-->
+            </div>
+                <!--<div class="col-xs-4"><a href="{{model.report.imageurl}}">{{model.report.imagename}}</a></div>-->
+            </div>
+
+            <div class = "row taj-top-margin">
+                <div class="col-xs-6"><a ng-click="model.updateReport(model.report)" class="btn btn-block btn-primary">Save</a></div>
+                <div class="col-xs-6"><a ng-click="model.deleteReport()" class="btn btn-block btn-danger">Delete</a></div>
+            </div>
+    </div>
+
+</div>
+
+
+
+
+
+
+<div ng-include="'views/common/footer-common.view.client.html'"></div>

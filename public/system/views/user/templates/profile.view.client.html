@@ -1,0 +1,263 @@
+
+
+    <!--<nav class="navbar taj-navbar-default navbar-fixed-top">-->
+        <!--<div class="container-fluid">-->
+
+            <!--<div class="navbar-text pull-left ">-->
+                <!--<a class="navbar-link" >-->
+                    <!--<span class="glyphicon glyphicon-chevron-left"></span>-->
+                <!--</a>-->
+            <!--</div>-->
+
+            <!--<div class="navbar-header col-xs-11 col-sm-5">-->
+                <!--<a class="navbar-brand">-->
+                    <!--Profile-->
+                <!--</a>-->
+            <!--</div>-->
+
+            <!--<div class="navbar-text pull-right">-->
+                <!--<a class="navbar-link"-->
+                   <!--ng-click="model.updateUser(model.user)">-->
+                    <!--<span class="glyphicon glyphicon-ok"></span>-->
+                <!--</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
+    <div ng-include="'views/common/header-common.view.client.html'"></div>
+    <div class="container-fluid">
+
+        <div class="row taj-bottom-margin taj-top-margin">
+
+            <div class="col-md-4 col-xs-9">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title panel-padding-left">User Details</h3>
+                    </div>
+                    <div class="row taj-name-margin taj-top-margin">
+                        <div class = "col-xs-5">Username</div>
+                        <div class="col-xs-7">{{model.user.username}}</div>
+                    </div>
+
+                    <div class="row taj-name-margin">
+                        <div class = "col-xs-5">Name</div>
+                        <div class="col-xs-7">{{model.user.profile.last_name}},{{model.user.profile.first_name}}</div>
+                    </div>
+
+                    <div class="row taj-name-margin">
+                        <div class = "col-xs-5">Type</div>
+                        <div class="col-xs-7">{{model.user.userType}}</div>
+                    </div>
+
+                    <div class="row taj-name-margin">
+                        <div class = "col-xs-5">Email</div>
+                        <div class="col-xs-7">{{model.user.email}}</div>
+                    </div>
+
+                    <div class="row taj-name-margin">
+                        <div class = "col-xs-5">Title</div>
+                        <div class="col-xs-7">{{model.user.profile.title}}</div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-6 visible-md visible-lg">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Next Appointment
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class = "row">
+                            <div class = "col-xs-5">{{model.user._appointments_future[0].withUser}}</div>
+                            <div class="col-xs-4">{{model.user._appointments_future[0].date | date:'EEE'}}
+                                {{}}
+                                {{model.user._appointments_future[0].time}}
+                            </div>
+                            <div class="col-xs-3">
+                                <a ng-click="model.rescheduleAppointment(model.user._appointments_future[0]._id)"
+                                   class="btn btn-default reschedule-btn">
+                                    Reschedule
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default taj-top-margin">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">
+                            Appointment Details
+                        </h3>
+                    </div>
+                    <div class="panel-body">
+                        <div>
+                            {{model.user._appointments_future[0].details}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2 col-xs-3">
+                <!--<img class="img-responsive" alt="Responsive image" src="uploads/heart-pulse.jpeg"/>-->
+                <img class="img-responsive" alt="Responsive image" src="{{model.user.profile.image_url}}"/>
+            </div>
+        </div>
+
+
+        <div class="taj-bottom-margin taj-top-margin">
+            <div class="input-group">
+            </div><!-- /input-group -->
+            <a class="btn btn-default btn-block"
+               ng-click="model.searchDoctor()"
+               type="button">Search Doctor
+            </a>
+        </div>
+        <!--<div class="taj-bottom-margin taj-top-margin">-->
+            <!--<div class="input-group">-->
+                <!--<input type="text" class="form-control" placeholder="Search for...">-->
+                <!--<span class="input-group-btn">-->
+                    <!--<button class="btn btn-default"-->
+                            <!--ng-click="model.searchDoctor()"-->
+                            <!--type="button">Search-->
+                    <!--</button>-->
+                <!--</span>-->
+            <!--</div>&lt;!&ndash; /input-group &ndash;&gt;-->
+        <!--</div>-->
+
+        <div class="list-group taj-bottom-margin taj-top-margin">
+            <div class="list-group-item active">
+                <div class="row">
+                    <!--title-->
+                    <div class="col-xs-6 col-sm-5">
+                        Future Appointments
+                    </div>
+                    <div class="col-xs-4 col-sm-3">
+                        Date
+                    </div>
+                    <div class="col-sm-2 hidden-xs">
+                        Time
+                    </div>
+                    <div class="col-xs-2">
+                        <a ng-click="model.createAppointment()"
+                           class="navbar-link pull-right">
+                            <span class="glyphicon glyphicon-plus white"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="appointment in model.user._appointments_future">
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-5">
+                            {{appointment.withUser}}
+                        </div>
+                        <div class="col-xs-4 col-sm-3">
+                            {{appointment.date | date : 'shortDate'}}
+                        </div>
+                        <div class="col-sm-2 hidden-xs">
+                            {{appointment.time}}
+                        </div>
+                        <div class="col-xs-2">
+                            <a   ng-click="model.rescheduleAppointment(appointment._id)"
+                                 class="navbar-link pull-right">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="list-group taj-bottom-margin taj-top-margin">
+            <div class="list-group-item active">
+                <div class="row">
+                    <div class="col-xs-6 col-sm-5">
+                        Previous Appointments
+                    </div>
+                    <div class="col-xs-4 col-sm-3">
+                        Date
+                    </div>
+                    <div class="col-sm-2 hidden-xs">
+                        Time
+                    </div>
+                    <div class="col-xs-2">
+                        <!--<a ng-click="model.createNewWebsite()"-->
+                        <!--class="navbar-link pull-right">-->
+                        <!--<span class="glyphicon glyphicon-plus white"></span>-->
+                        <!--</a>-->
+                    </div>
+                </div>
+            </div>
+            <div ng-repeat="appointments in model.user._appointments_previous">
+                <div class="list-group-item">
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-5">
+                            {{appointments.withUser}}
+                        </div>
+                        <div class="col-xs-4 col-sm-3">
+                            {{appointments.date | date : 'shortDate'}}
+                        </div>
+                        <div class="col-sm-2 hidden-xs">
+                            {{appointments.time}}
+                        </div>
+                        <div class="col-xs-2">
+                            <a  ng-click="model.rescheduleAppointment(appointments._id)"
+                                class="navbar-link pull-right">
+                                <span class="glyphicon glyphicon-cog"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row taj-bottom-margin taj-top-margin">
+
+            <!--<div class="col-xs-6">
+                <a class="btn btn-default btn-info btn-block"
+                   role="button"
+                   ng-click="model.showUserReportById()">
+                    Report
+                </a>
+            </div>-->
+
+            <div class="col-xs-12">
+                <a class="btn btn-default btn-success btn-block"
+                   role="button"
+                   ng-show="model.user.userType === 'agent' || model.user.userType === 'patient' || model.user.userType === 'admin'"
+                   ng-click="model.createAppointment()">
+                    Book Appointment
+                </a>
+            </div>
+
+        </div>
+
+        <div class="taj-bottom-margin taj-top-margin">
+            <a class="btn btn-default btn-info btn-block"
+               ng-click="model.showInsuranceById()"
+               role="button">Insurance
+            </a>
+        </div>
+
+
+        <div class="taj-bottom-margin taj-top-margin">
+            <a class="btn btn-default btn-primary btn-block"
+               ng-show="model.isAgent"
+               ng-click="model.createInsurance()"
+               role="button">Create Insurance
+            </a>
+            <!--ng-show = "!model.isPatient"-->
+        </div>
+    </div>
+
+
+
+    <div ng-include="'views/common/footer-common.view.client.html'"></div>
+
+
+
+
+
+
+

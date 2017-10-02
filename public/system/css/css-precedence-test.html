@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!--
+            1. !Important to tags......  background-color: black !important;
+            2. STYLE (inline)..........  style="background-color: chartreuse"
+            3. ID (specific)...........  #head  {}
+            4. CLASS...................  yellow-bg  {}
+            5. TAG <h1></h1> (generic).  h1 {}
+
+            *. According to the document order of declaration, the LAST rule wins, the last one OVERRIDES previous rules.
+            *. SPECIFICITY has precedence over document order
+            *. Classes Selectors are More Specific than Element Selectors (4..5)
+            *. CSS properties from parent elements are inherited by child, but last one wins.
+            *. Mragin Border Padding. (MBP) - Box Module
+
+            o. position: fixed = Removes the element from its normal position, so everyone else after that is affected.
+            o. position: absoulte = Also removes element from the normal position, but it moves up and down when scrolles.
+            o. absolute, fixed, inherit, relative, static.
+            o. visibility :hidden = does the element but do not change its position so no one is affected.
+            o. display : none = ermoves th eelement from page, so other elements are affected.
+
+            #. margin: auto = tries to bring the elemnt in the center.
+            #. right: 0px = binds right side of element to the right side of the browser window.
+            #. (bootstrap) table = adds padding and soft borders, table-striped = adds ulternate coloring.
+            #. table-bordered =  adds border, table-hover = highlights the row on which you hover the mosue.
+    -->
+
+    <meta charset="UTF-8">
+    <title>Precedence Test</title>
+    <style>
+
+        #head  {
+            background-color: blue;
+            color: #18f306;
+            position: ;
+        }
+
+        h1#head {
+            background-color: #8a6d3b;
+        }
+
+        yellow-bg   {
+            background-color: yellow;
+        }
+
+        h1  {
+            background-color: black !important;
+            color: red;
+        }
+
+        /*body    {
+            background-image: url("https://as1.ftcdn.net/jpg/00/48/20/68/500_F_48206836_ISHfZdfJ3iEHNkuVg0SHNCq8aWovVgld.jpg");
+        }*/
+        
+    </style>
+</head>
+<body>
+    <h1 id="head" class="yellow-bg" style="background-color: chartreuse">
+        Doctor Fix
+    </h1>
+</body>
+</html>
+

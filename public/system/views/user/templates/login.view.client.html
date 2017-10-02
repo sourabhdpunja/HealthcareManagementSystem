@@ -1,0 +1,66 @@
+
+
+<div ng-include="'views/common/header-common.view.client.html'"></div>
+
+    <div>
+        <div class="container-fluid">
+
+            <div ng-show="model.message" class="alert alert-info">
+                {{model.message}}</br>
+            </div>
+
+
+
+            <div class="input-group taj-bottom-margin">
+                <input type="text"
+                       class="form-control"
+                       aria-describedby="basic-addon2"
+                       name="username"
+                       ng-model="model.user.username"
+                       class="form-control"
+                       id="username"
+                       placeholder="username">
+                <span class="input-group-addon back-color-white"
+                      id="basic-addon1">
+                    <span class="glyphicon glyphicon-log-in"></span>
+                </span>
+            </div>
+
+            <div class="input-group taj-bottom-margin">
+                <input aria-describedby="basic-addon2"
+                       class="form-control"
+                       name="password"
+                       ng-model="model.user.password"
+                       id="password"
+                       type="password"
+                       placeholder="password">
+                <span class="input-group-addon back-color-white"
+                      id="basic-addon2">
+                    <span class="glyphicon glyphicon-lock"></span>
+                </span>
+            </div>
+
+
+            <a class="btn btn-default btn-primary btn-block"
+               role="button"
+               ng-click="model.login(model.user)">
+                Login</a>
+
+            <a href="/auth/google" class="btn btn-danger btn-block">
+                <span class="fa fa-google-plus"></span>
+                Google
+            </a>
+
+            <a href="/auth/facebook" class="btn btn-primary btn-block">
+                <span class="fa fa-facebook"></span>
+                Facebook
+            </a>
+
+            <a class="btn btn-default btn-success btn-block"
+               href="#!/register"
+               role="button">Register</a>
+        </div>
+    </div>
+
+
+<div ng-include="'views/common/footer-common.view.client.html'"></div>

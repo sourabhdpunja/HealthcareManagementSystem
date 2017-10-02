@@ -1,0 +1,24 @@
+<nav class="navbar taj-navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+
+        <div class="navbar-text pull-left">
+            <a class="navbar-link"
+               ng-click="model.chevronLeft()">
+                <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+        </div>
+
+        <div class="navbar-header col-xs-11 col-sm-5">
+            <a class="navbar-brand">
+                {{model.brand}}
+            </a>
+        </div>
+
+        <div class="navbar-text pull-right">
+            <a class="navbar-link"
+               ng-click="model.okay(model.object)">
+                <span class="glyphicon glyphicon-ok"></span>
+            </a>
+        </div>
+    </div>
+</nav>

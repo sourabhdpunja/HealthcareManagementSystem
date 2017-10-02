@@ -1,0 +1,292 @@
+
+
+<div ng-include="'views/common/header-common.view.client.html'"></div>
+
+<div class="container-fluid">
+
+    <div class="taj-bottom-margin taj-top-margin">
+
+        <!--<div class="input-group">-->
+            <!--<input type="text"-->
+                   <!--class="form-control"-->
+                   <!--ng-model="model.appointment.searchName"-->
+                   <!--placeholder="Search Doctor ...">-->
+            <!--<span class="input-group-btn">-->
+                <!--<button class="btn btn-default"-->
+                        <!--ng-click="model.searchDoctor()"-->
+                        <!--type="button">Search-->
+                <!--</button>-->
+            <!--</span>-->
+        <!--</div>&lt;!&ndash; /input-group &ndash;&gt;-->
+
+        <div class="taj-bottom-margin taj-top-margin">
+            <div class="input-group">
+            </div><!-- /input-group -->
+            <a class="btn btn-default btn-block"
+               ng-click="model.searchDoctor()"
+               type="button">Search Doctor
+            </a>
+        </div>
+
+        <div class="row taj-bottom-margin taj-top-margin">
+            <div class="col-xs-6 taj-top-margin">
+                <label for="status">Appointment Status</label>
+            </div>
+            <div class="col-xs-6">
+                <input class="form-control"
+                       readonly
+                       id="status"
+                       name="status"
+                       ng-model="model.appointment.status"/>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group taj-bottom-margin taj-top-margin">
+                    <label for="doctorName">Doctor</label>
+                    <input class="form-control"
+                           id="doctorName"
+                           name="doctorName"
+                           ng-model="model.appointment.doctor_name"/>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group taj-bottom-margin taj-top-margin">
+                    <label for="doctorName">Id</label>
+                    <a href="#!/doctor/{{model.appointment.doctorId}}">
+                        <input class="form-control"
+                               readonly
+                               id="doctorId"
+                               name="doctorId"
+                               ng-model="model.appointment.doctorId"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="form-group taj-bottom-margin taj-top-margin">
+                    <label for="patientName">Patient</label>
+                    <input class="form-control"
+                           id="patientName"
+                           name="patientName"
+                           ng-model="model.appointment.patient_name"/>
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="form-group taj-bottom-margin taj-top-margin">
+                    <label for="doctorName">Id</label>
+                    <a href="#!/patient/{{model.appointment.patientId}}">
+                        <input class="form-control"
+                               readonly
+                               id="patientId"
+                               name="doctorId"
+                               ng-model="model.appointment.patientId"/>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group taj-bottom-margin taj-top-margin">
+            <label for="departmentName">Depatrment/Speciality</label>
+            <input class="form-control"
+                   id="departmentName"
+                   name="departmentName"
+                   ng-model="model.appointment.specialty"/>
+        </div>
+
+        <div class="form-item form-type-radios  taj-bottom-margin taj-top-margin">
+            <label for="edit-appointment-cateogry">
+                Appointment category
+            </label>
+
+            <div class="form-radios row" id="edit-appointment-cateogry">
+                <div class="form-item form-type-radio col-xs-4">
+                    <input type="radio"
+                           id="appointment-cateogry-fv"
+                           name="appointment_cateogry"
+                           value="First Visit"
+                           ng-model="model.appointment.appointment_category"
+                           class="form-radio">
+                    <label class="option"
+                           for="appointment-cateogry-fv">
+                        First visit
+                    </label>
+                </div>
+                <div class="form-item form-type-radio col-xs-8">
+                    <input type="radio"
+                           id="appointment-cateogry-fuv"
+                           name="appointment_cateogry"
+                           value="Follow Up"
+                           ng-model="model.appointment.appointment_category"
+                           class="form-radio">
+                    <label class="option"
+                           for="appointment-cateogry-fuv">
+                        Follow up visit
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-item form-type-radios  taj-bottom-margin taj-top-margin">
+            <label for="edit-priority-cateogry">
+                Priority *
+            </label>
+
+            <div class="form-radios row" id="edit-priority-cateogry">
+                <div class="form-item form-type-radio col-sm-4 col-xs-12">
+                    <input type="radio"
+                           id="priority-na"
+                           name="priority_cateogry"
+                           value="Very High"
+                           ng-model="model.appointment.priority"
+                           class="form-radio">
+                    <label class="option"
+                           for="priority-na">
+                        Urgent
+                    </label>
+                </div>
+                <div class="form-item form-type-radio col-sm-4 col-xs-12">
+                    <input type="radio"
+                           id="priority-ww"
+                           name="priority_cateogry"
+                           ng-model="model.appointment.priority"
+                           value="High"
+                           class="form-radio">
+                    <label class="option"
+                           for="priority-ww">
+                        High
+                    </label>
+                </div>
+                <div class="form-item form-type-radio col-sm-4 col-xs-12">
+                    <input type="radio"
+                           id="priority-wm"
+                           name="priority_cateogry"
+                           ng-model="model.appointment.priority"
+                           value="Low"
+                           class="form-radio">
+                    <label class="option"
+                           for="priority-wm">
+                        Low
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="row taj-top-margin taj-bottom-margin">
+            <div class="col-xs-12 col-md-6">
+                <label for="date">
+                    Date
+                </label>
+                <input class="form-control"
+                          type="Date"
+                          id="date"
+                          name="date"
+                          ng-model="model.appointment.date">
+                </input>
+            </div>
+
+
+            <div class="col-xs-12 col-md-6">
+                <label for="time">Time</label>
+                <select class="form-control"
+                        id="time"
+                        name="time"
+                        ng-model="model.appointment.time">
+                    <option value="09:00 AM">09:00 AM</option>
+                    <option value="10:00 AM">10:00 AM</option>
+                    <option value="11:00 AM">11:00 AM</option>
+                    <option value="12:00 PM">12:00 PM</option>
+                    <option value="01:00 PM">01:00 PM</option>
+                    <option value="02:00 PM">02:00 PM</option>
+                    <option value="03:00 PM">03:00 PM</option>
+                    <option value="04:00 PM">04:00 PM</option>
+                    <option value="05:00 PM">05:00 PM</option>
+                </select>
+                <!--{{model.appointment.time}}-->
+            </div>
+        </div>
+
+        <div>
+            <label for="details">
+                Details
+            </label>
+            <textarea class="form-control"
+                      id="details"
+                      name="details"
+                      ng-model="model.appointment.details"
+                      rows="3">
+            </textarea>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12">
+            <a class="btn btn-default btn-success btn-block"
+               ng-click="model.function(model.appointment)"
+               ng-show="model.appointment.isApproved == false"
+               role="button">{{model.button}}
+            </a>
+            <!--<a class="btn btn-default btn-success btn-block"
+               ng-click="model.approveAppointment(model.appointment)"
+               role="button">Approve
+            </a>-->
+        </div>
+        <div class="col-xs-12 taj-bottom-margin taj-top-margin">
+            <a class="btn btn-default btn-danger btn-block"
+               ng-click="model.deleteAppointment(model.appointment)"
+               role="button">Cancel
+            </a>
+        </div>
+    </div>
+
+    <div class="taj-bottom-margin">
+        <a class="btn btn-default btn-info btn-block"
+           ng-click="model.createReport(model.appointment)"
+           ng-show="!model.isPatient"
+           role="button">Add Prescription / Report
+        </a>
+    </div>
+
+    <div class="list-group taj-bottom-margin ">
+        <div class="list-group-item active">
+            <div class="row">
+                <!--title-->
+                <div class="col-xs-10">
+                    Reports
+                </div>
+                <div class="col-xs-2">
+                    <a ng-click="model.createReport(model.appointment)"
+                       ng-show="!model.isPatient"
+                       class="navbar-link pull-right">
+                        <span class="glyphicon glyphicon-plus white"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div ng-repeat="reports in model.appointment._reports">
+            <div class="list-group-item">
+                <div class="row">
+                    <div class="col-xs-10">
+                        <a ng-click="model.editReport(model.appointment, reports)">
+                            {{reports}}
+                        </a>
+                    </div>
+                    <div class="col-xs-2">
+                        <a   ng-click="model.editReport(model.appointment, reports)"
+                             class="navbar-link pull-right">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div ng-include="'views/common/footer-common.view.client.html'"></div>

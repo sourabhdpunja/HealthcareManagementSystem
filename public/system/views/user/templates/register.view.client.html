@@ -1,0 +1,159 @@
+
+    <!--<nav class="navbar taj-navbar-default navbar-fixed-top">-->
+        <!--<div class="navbar-brand">-->
+            <!--Register-->
+        <!--</div>-->
+    <!--</nav>-->
+
+    <div ng-include="'views/common/header-common.view.client.html'"></div>
+    <div class="container-fluid">
+
+        <div class="div-width container-fluid">
+            <h4 class="taj-bottom-margin">
+                Sign up with
+                <a href="/auth/facebook">
+                    <span class="fa fa-facebook"></span>acebook
+                </a>
+                or
+                <a href="/auth/google" class="red">
+                    <span class="fa fa-google-plus"></span>oogle
+                </a>
+            </h4>
+        </div>
+
+        <div class="div-width container-fluid">
+            <h5 class="margin-top-20-bottom-32">
+                ------------------------ or ------------------------
+            </h5>
+        </div>
+
+        <!--<div class="input-group taj-bottom-margin">
+            <input type="text"
+                   class="form-control"
+                   aria-describedby="basic-addon2"
+                   id="email"
+                   ng-model="user.email"
+                   name="email"
+                   placeholder="Email Address">
+            <span class="input-group-addon back-color-white"
+                  id="basic-addon1">
+                <span class="glyphicon glyphicon-envelope"></span>
+            </span>
+        </div>-->
+
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-group taj-bottom-margin">
+                    <input type="text"
+                           class="form-control"
+                           aria-describedby="basic-addon2"
+                           id="firstname"
+                           ng-model="user.first_name"
+                           name="firstname"
+                           placeholder="First Name">
+                    <span class="input-group-addon back-color-white"
+                          id="basic-addon2">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </span>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="input-group taj-bottom-margin">
+                    <input type="text"
+                           class="form-control"
+                           aria-describedby="basic-addon2"
+                           id="lastname"
+                           ng-model="user.last_name"
+                           name="lastname"
+                           placeholder="Last Name">
+                    <span class="input-group-addon back-color-white"
+                          id="basic-addon3">
+                        <span class="glyphicon glyphicon-user"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="input-group taj-bottom-margin">
+            <input class="form-control"
+                   aria-describedby="basic-addon2"
+                   id="username"
+                   name="username"
+                   ng-model="user.username"
+                   type="text"
+                   placeholder="Select a Username">
+            <span class="input-group-addon back-color-white"
+                  id="basic-addon4a">
+                    <span class="glyphicon glyphicon-bishop"></span>
+                </span>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="input-group taj-bottom-margin">
+                    <input class="form-control"
+                           aria-describedby="basic-addon2"
+                           id="password"
+                           name="password"
+                           ng-model="user.password1"
+                           type="password"
+                           placeholder="Type Password">
+                    <span class="input-group-addon back-color-white"
+                          id="basic-addon4">
+                    <span class="glyphicon glyphicon-lock"></span>
+                </span>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="input-group taj-bottom-margin">
+                    <input class="form-control"
+                           aria-describedby="basic-addon2"
+                           id="password2"
+                           name="password2"
+                           ng-model="user.password2"
+                           type="password"
+                           placeholder="Retype Password">
+                    <span class="input-group-addon back-color-white"
+                          id="basic-addon5">
+                        <span class="glyphicon glyphicon-lock"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3 hidden-sm"></div>
+            <div class="col-lg-6 col-sm-12">
+                <select class="form-control"
+                        placeholder="Create a Password"
+                        id="usertype"
+                        ng-model="user.userType">
+                    <option value="" disabled selected>Select User Type</option>
+                    <option value="patient">Patient</option>
+                    <option value="doctor">Doctor</option>
+                    <option value="agent">Agent</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <div class="col-lg-3 hidden-sm"></div>
+        </div>
+
+        <a class="btn btn-default btn-primary btn-block"
+           ng-click="model.register(user)"
+           role="button">Sign Up
+        </a>
+
+        <a class="btn btn-default btn-danger btn-block"
+           href="#!/login"
+           role="button">Cancel
+        </a>
+    </div>
+
+    <!--<nav class="navbar taj-navbar-default navbar-fixed-bottom">-->
+        <!--<div class="navbar-brand">-->
+            <!--Neu App-->
+        <!--</div>-->
+    <!--</nav>-->
+
+    <div ng-include="'views/common/footer-common.view.client.html'"></div>
